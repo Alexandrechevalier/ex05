@@ -3,6 +3,17 @@
 
 import 'package:ex05/ex05.dart' as ex05;
 
-main() {
-  print('Hello world: ${ex05.calculate()}!');
+void main() {
+
+ String a = 'blaa bla bla';
+ String b = 'bl0 bl00 bl00';
+ 
+ print('ce string est constitué que de lettres et d\'espaces : ${ex05.test1(a)}');
+ print('ce string est constitué que de lettres et d\'espaces : ${ex05.test1(b)}');
+ print('${ex05.test2(a, b)}');
+ print('Ce mot est le plus long de la phrase : ${ex05.test3(a)}');
+ print('Ce mot est le plus long de la phrase : ${ex05.test3(b)}');
+ print(ex05.test4(8, 9));
+ print('');
+ print(ex05.asteriskTree(6));
 }

@@ -3,8 +3,4 @@
 
 library all_tests;
 
-import 'ex05_test.dart' as ex05_test;
 
-void main() {
-  ex05_test.defineTests();
-}

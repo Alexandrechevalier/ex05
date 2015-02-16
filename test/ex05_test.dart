@@ -3,15 +3,5 @@
 
 library ex05_test;
 
-import 'package:ex05/ex05.dart';
-import 'package:unittest/unittest.dart';
 
-void main() => defineTests();
 
-void defineTests() {
-  group('main tests', () {
-    test('calculate', () {
-      expect(calculate(), 42);
-    });
-  });
-}
