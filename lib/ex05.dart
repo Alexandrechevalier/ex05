@@ -5,63 +5,87 @@
 library ex05;
 
 //exercice 5,1
-
-test1(String input) {
-  var phrase = input.toUpperCase().codeUnits;
-  List validation = [];
-  for(int i = 0; i < phrase.length; i++) {
-    if(phrase[i] == 32)
-      validation.add(true);
-   else if((phrase[i] > 64) && (phrase[i] < 91))
-      validation.add(true);
-    else
-      validation.add(false);
-  }
-  return validation.every((e) => e == true);
+test1(a){
+  
+  String w = a.toLowerCase();
+  List c = w.split('');
+  Set newSet = c.toSet();
+  List t = newSet.toList();
+  t.forEach((e)=> e.contains('a')||e.contains('b')||e.contains('c')||e.contains('d')||e.contains('e')||e.contains('f')||e.contains('g')||e.contains('h')||e.contains('i')||e.contains('j')||e.contains('k')||e.contains('l')||e.contains('m')||e.contains('n')||e.contains('o')||e.contains('p')||e.contains('q')||e.contains('r')||e.contains('s')||e.contains('t')||e.contains('u')||e.contains('v')||e.contains('w')||e.contains('x')||e.contains('y')||e.contains('z')||e.contains(' ') ? print('lettre ou espace'):print('pas une lettre ou un espace') );
+  return (t);
 }
+
 
 // exercice 5,2
 
-test2(String a, String b) {
-  var compare = a.length.compareTo(b.length);
-  if(compare == 0)
-    return 'Les deux ont la même longueur.';
-  else if(compare > 0)
-    return 'La phrase "$a" est la plus longue.';
-  else
-    return 'La phrase "$b" est la plus longue.';
+test2(phrase)  {
+
+  var laPlusLongue = "";
+  var k = "";
+  for (int i = 0; i < phrase.length; i++) {
+    if (phrase[i] == " " && phrase[i - 1] == ".")  {
+      i++;
+    }
+    if (phrase[i] != ".")  {
+      k = k + phrase[i];
+    }
+    if (phrase[i] == ".")  {
+      if (k.length > laPlusLongue.length) {
+        laPlusLongue = k;
+      }
+      k = "";
+    }
+  }
+
+  return laPlusLongue;
 }
 
 //exercice 5,3
 
-test3(String input) {
-  var words = input.split(' ');
-  words.sort((a, b) => a.length.compareTo(b.length));
-  return words.last;
+test3 (mot)  {
+
+  var l = "";
+  var u = "";
+  for (int i = 0; i < mot.length; i++) {
+    if (mot[i] != " ")  {
+      u = u + mot[i];
+    }
+    if (mot[i] == " ")  {
+      if (u.length > l.length) {
+        l = u;
+      }
+      u = "";
+    }
+  }
+
+  return l;
 }
 
 //exercice 5,4
-test4(num x, num n) {
-  String result = '';
-  for(int i = 1; i <= n; i++) {
-    var m = x * i;
-    result = '$result \n$x X $i = $m';
+
+test4(num x, int fin) {
+  List numbers = new List();
+
+  for (int i = 1; i <= fin; i++) {
+    num produit = x * i;
+    numbers.add("$x * $i = ${x * i}");
   }
-  return result;
+
+  return numbers;
 }
 
 //exercice 5,5
-asteriskTree(int height) {
-  String result = '';
-  for(int i = height; i > 0; i--) {
-    for(int j = 0; j < i - 1; j++)
-      result = '$result ';
-    
-    for(int k = 2 * i - height; k <= height; k++) {
-      result = '${result}*';
+
+test5(int z) {
+  String rep = '';
+  for (int i = z; i > 0; i--) {
+    for (int j = 0; j < i - 1; j++) rep = '$rep ';
+
+    for (int p = 2 * i - z; p <= z; p++) {
+      rep = '${rep}*';
     }
 
-    result = '$result\n';
+    rep = '$rep\n';
   }
-  return result;
+  return rep;
 }
