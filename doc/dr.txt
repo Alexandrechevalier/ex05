@@ -1,0 +1,25 @@
+ex05
+
+19/20
+
+supprimer le dossier test
+
+utiliser les types pour des paramètres de fonctions
+test1(a) { --> test1(String a) {
+
+utiliser les types pour des résultats de fonctions
+test1(String a) { --> bool test1(String a) {
+
+(-1) 5.1 voir le code
+
+5.4
+
+variable non utilisé
+num produit = x * i; --> //num produit = x * i;
+
+
+
+
+
+
+
